@@ -12,5 +12,5 @@ class CreateEvent(models.Model):
 	option_website_link = models.CharField(max_length = 100)
 	option_contact_info =  models.CharField(max_length = 100)
 
-	def __str__:
-		return event_name + " " +venue+ " "+ seats
+	def __str__(self):
+		return self.event_name + " | " +self.venue+ " | "+ str(self.seats)
