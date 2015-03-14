@@ -1,14 +1,74 @@
 {% extends "base.html"%}
+{% load staticfiles %}
+
 {% block content %}
 
-{% if events_list %}
-    <ul>
-    {% for event in events_list %}
-        <li><a href="{% url 'event_detail' event.id %}">{{ event.event_name }}</a></li>
+
+	
+
+		<div class="container">
+			<aside class="sidebar clearfix">
+				<nav>
+					<a href="#"><i class="fa fa-fw fa-comments-o"></i>About</a>
+					<a href="#"><i class="fa fa-fw fa-heart-o"></i>Blog</a>
+					<a href="#"><i class="fa fa-fw fa-send-o"></i>Contact Us</a>
+					
+				</nav>
+			</aside>
+			<div id="morphsearch" class="morphsearch">
+				<form class="morphsearch-form">
+					<input class="morphsearch-input" type="search" placeholder="Check Events"/style="color:#e74c3c;text-align:center;padding-top:20px">
+					<button class="morphsearch-submit" type="submit">Search</button>
+				</form>
+				<div class="morphsearch-content" style="background:#fff">
+				
+					<div class="dummy-column" style="background:#e74c3c">
+						<h2 style="text-align:center;color:#fff;font-size:25px;">Today</h2>	
+
+{% if events_list_today %}
+    
+    {% for event in events_list_today %}
+        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo">{{ event.event_name }}<br>{{event.date_time}} | {{event.venue}}</a>
     {% endfor %}
-    </ul>
+    
 {% else %}
     <p>No Events are available.</p>
-{% endif %}
-
-{% endblock %}
+{% endif %}				
+			
+					</div>
+					<div class="dummy-column" style="background:#e74c3c">
+						<h2 style="text-align:center;color:#fff;font-size:25px;">Tomorrow</h2>
+{% if events_list_tomorrow %}
+    
+    {% for event in events_list_tomorrow %}
+        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo">{{ event.event_name }}<br>{{event.date_time}} | {{event.venue}}</a>
+    {% endfor %}
+    
+{% else %}
+    <p>No Events are available.</p>
+{% endif %}	
+						
+					</div>
+					<div class="dummy-column" style="background:#e74c3c">
+						<h2 style="text-align:center;color:#fff;font-size:25px;">All Events</h2>
+{% if events_list_all %}
+    
+    {% for event in events_list_all %}
+        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo">{{ event.event_name }}<br>{{event.date_time}} | {{event.venue}}</a>
+    {% endfor %}
+    
+{% else %}
+    <p>No Events are available.</p>
+{% endif %}	
+					</div>
+				</div><!-- /morphsearch-content -->
+				<span class="morphsearch-close"></span>
+			</div><!-- /morphsearch -->
+			<header class="codrops-header">
+				<h1>NickBoard <span>Online notice board for IIT Bombay</span></h1>
+				
+			</header>
+			<div class="overlay"></div>
+		</div><!-- /container -->
+		</body>
+	{% endblock %}
