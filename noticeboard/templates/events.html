@@ -16,7 +16,7 @@
 				</nav>
 			</aside>
 			<div id="morphsearch" class="morphsearch">
-				<form class="morphsearch-form">
+				<form class="morphsearch-form" >
 					<input class="morphsearch-input" type="search" placeholder="Check Events"/style="color:#e74c3c;text-align:center;padding-top:20px">
 					<button class="morphsearch-submit" type="submit">Search</button>
 				</form>
@@ -28,7 +28,7 @@
 {% if events_list_today %}
     
     {% for event in events_list_today %}
-        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo">{{ event.event_name }}<br>{{event.date_time}} | {{event.venue}}</a>
+        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo"><b>{{ event.event_name }}</b><br>{{event.date_time}} | {{event.venue}}</a>
     {% endfor %}
     
 {% else %}
@@ -41,7 +41,7 @@
 {% if events_list_tomorrow %}
     
     {% for event in events_list_tomorrow %}
-        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo">{{ event.event_name }}<br>{{event.date_time}} | {{event.venue}}</a>
+        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo"><b>{{ event.event_name }}</b><br>{{event.date_time}} | {{event.venue}}</a>
     {% endfor %}
     
 {% else %}
@@ -54,7 +54,7 @@
 {% if events_list_all %}
     
     {% for event in events_list_all %}
-        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo">{{ event.event_name }}<br>{{event.date_time}} | {{event.venue}}</a>
+        <a class="dummy-media-object" href="{% url 'event_detail' event.id %}" style="border-bottom:solid #fff 1px;font-size:20px;colo"><b>{{ event.event_name }}</b><br>{{event.date_time}} | {{event.venue}}</a>
     {% endfor %}
     
 {% else %}
