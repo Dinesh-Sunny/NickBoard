@@ -24,8 +24,9 @@ def events(request):
 		context = {'events_list_today':events_list_today,'events_list_tomorrow':events_list_tomorrow,
 		'events_list_all':events_list_all,"ldapid":request.session["ldapid"]}
 
-        return render(request, 'events.html', context)     return
-HttpResponse("Noy logged_in")
+        return render(request, 'events.html', context)
+ #     return
+ # HttpResponse("Not logged_in")
 	
 
 def event_detail(request, event_id):
