@@ -30,7 +30,7 @@ class PollsTest(LiveServerTestCase):
         # her username and password are accepted, and she is taken to
         # the Site Administration page
         body = self.browser.find_element_by_tag_name('body')
-        self.assertIn('NickBoard | Administration', body.text)
+        self.assertIn('Site administration', body.text)
 
         # She now sees a couple of hyperlink that says "events"
         polls_links = self.browser.find_elements_by_link_text('Polls')

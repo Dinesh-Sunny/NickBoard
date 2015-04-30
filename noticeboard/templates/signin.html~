@@ -9,7 +9,7 @@
 <form method="post" action="">
   <div class="form-group">
     <h2><label for="exampleInputEmail1">LDAP ID</label></h2>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="ldapId" placeholder="Enter ldap id">
+    <input type="text" class="form-control" id="exampleInputEmail1" name="ldapId" placeholder="Enter email">
   </div>
   <div class="form-group">
     <h2><label for="exampleInputPassword1">Password</label></h2>
